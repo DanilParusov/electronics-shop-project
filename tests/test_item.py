@@ -25,3 +25,7 @@ def test_second_homework(item):
 
     Item.instantiate_from_csv()
     assert len(Item.all) == 5
+
+def test_third_homework(item):
+    assert repr(item) == "Item('Смартфон', 10000, 20)"
+    assert str(item) == 'Смартфон'
