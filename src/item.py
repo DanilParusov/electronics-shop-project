@@ -71,6 +71,7 @@ class Item:
             try:
                 for row in reader:
                     item = (cls(row['name'], row['price'], row['quantity']))
+                    cls.all.append(item)
             except KeyError:
                 raise InstantiateCSVError('Файл items.csv поврежден')
         except FileNotFoundError:
