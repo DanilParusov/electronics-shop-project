@@ -1,7 +1,7 @@
 """Здесь надо написать тесты с использованием pytest для модуля item."""
 import pytest
 
-from src.item import Item
+from src.item import Item, InstantiateCSVError
 from src.phone import Phone
 
 
@@ -37,3 +37,10 @@ def test_fourth_homework():
 
     assert item1 + phone1 == 25
     assert phone1 + phone1 == 10
+    
+def test_sixth_homework():
+    with pytest.raises(FileNotFoundError):
+        Item.instantiate_from_csv()
+
+    with pytest.raises(InstantiateCSVError):
+        Item.instantiate_from_csv()
